@@ -159,3 +159,9 @@ kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1
 
 watch kubectl get pods -n calico-system
 ```
+
+### For printing the join command
+```bash
+kubeadm token create --print-join-command
+```
+- The join command and token are valid for 24 hours from creation
