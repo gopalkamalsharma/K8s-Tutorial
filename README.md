@@ -28,7 +28,7 @@ The MAC and UUID should be different on each machine
 ip link
 ```
 ```bash
-cat /sys/class/dmi/id/product_uuid
+sudo cat /sys/class/dmi/id/product_uuid
 ```
 ### Turn Swap Off
 
@@ -45,7 +45,7 @@ sudo sed -i.bak '/ swap /s/^\(.*\)$/#\1/' /etc/fstab
 ```bash
 echo "net.ipv4.ip_forward = 1" | sudo tee /etc/sysctl.d/k8s.conf
 sudo sysctl --system
-sysctl net.ipv4.ip_forward
+sudo sysctl net.ipv4.ip_forward
 ```
 
 ### Install Containerd and Verify installation
@@ -58,13 +58,13 @@ ctr --version
 ### Install CNI Plugins
 ```bash
 # creating directory to install CNI
-mkdir -p /opt/cni/bin
+sudo mkdir -p /opt/cni/bin
 
 # Downloading CNI plugin
-wget https://github.com/containernetworking/plugins/releases/download/v1.7.1/cni-plugins-linux-amd64-v1.7.1.tgz
+sudo wget https://github.com/containernetworking/plugins/releases/download/v1.7.1/cni-plugins-linux-amd64-v1.7.1.tgz
 
 # Unziping the downloaded CNI Plugin
-tar -C /opt/cni/bin -xzvf cni-plugins-linux-amd64-v1.7.1.tgz
+sudo tar -C /opt/cni/bin -xzvf cni-plugins-linux-amd64-v1.7.1.tgz
 ```
 ### Configure Containerd
 
@@ -76,7 +76,7 @@ sudo mkdir -p /etc/containerd
 containerd config default | sudo tee /etc/containerd/config.toml
 
 # Checking the configuration status
-head /etc/containerd/config.toml
+sudo head /etc/containerd/config.toml
 ```
 
 ### Editing the Containerd TOML file
@@ -136,7 +136,7 @@ sudo kubeadm init --pod-network-cidr=192.168.0.0/16
 # These commands will be displayed after cluster initialization
 
 # Creating Directory for Kubernetes
-mkdir -p $HOME/.kube
+sudo mkdir -p $HOME/.kube
 
 # Copy config file from admin to current user
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
