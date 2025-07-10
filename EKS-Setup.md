@@ -4,9 +4,9 @@ Open terminal in your Windows/Mac/Ubuntu
 
 ## Installing Kubectl to interact with K8s Cluster
 ```
-curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
+curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/darwin/arm64/kubectl
 chmod +x ./kubectl
-sudo mv ./kubectl /usr/local/bin
+sudo mv ./kubectl /opt/homebrew/bin
 kubectl version --short --client
 ```
 ## Install AWS CLI latest version using below commands 
