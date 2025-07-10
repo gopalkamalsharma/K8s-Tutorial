@@ -1,28 +1,19 @@
 # Step - 1 : For EKS Management in AWS #
 
-Open terminal in your Windows/Mac/Ubuntu
+Open terminal
 
 ## Installing Kubectl to interact with K8s Cluster
 ```
-curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/darwin/arm64/kubectl
-chmod +x ./kubectl
-sudo mv ./kubectl /opt/homebrew/bin
-kubectl version --short --client
+brew install kubectl
 ```
 ## Install AWS CLI latest version using below commands 
 ```
-sudo apt install unzip
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
-aws --version
+brew install awscli
 ```
 
 ## Install eksctl using below commands
 ```
-curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-sudo mv /tmp/eksctl /usr/local/bin
-eksctl version
+brew install eksctl
 ```
 ## Configure AWS CLI with IAM User Access Keys
 ```
