@@ -26,8 +26,8 @@ kubectl get deployments -o wide
 
 ```bash
 # It will create a new pod
-kubectl run pod <name of the pod> --image=<image name>
-eg: kubectl run pod nginx --image=nginx
+kubectl run <name of the pod> --image=<image name>
+eg: kubectl run nginx --image=nginx
 ```
 
 ## kubectl create
