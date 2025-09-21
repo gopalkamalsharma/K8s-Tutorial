@@ -41,7 +41,7 @@ eg: kubectl create deployment nginx --image=nginx
 ```bash
 # It will create the service which will expose the pod on internet
 kubectl expose pod <pod name> --port=<port-number> --type=<port-type>
-eg: kubectl expose pod nginx --port:80 --type=NodePort
+eg: kubectl expose pod nginx --port=80 --target-port=80 --type=LoadBalancer
 ```
 
 ## kubectl delete
