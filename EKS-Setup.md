@@ -42,11 +42,18 @@ eksctl create cluster --name cluster-name  \
 
 ## Mumbai: <br/>
 `
-eksctl create cluster --name demo-cluster-1 --region ap-south-1 --node-type t2.medium  --zones ap-south-1a,ap-south-1b,ap-south-1c
+eksctl create cluster --name demo-cluster-1 --region ap-south-1 --node-type t2.medium  --nodes-min 2 --node-max 2 --zones ap-south-1a,ap-south-1b
 `
 
-## Note: Cluster creation will take 5 to 10 mins of time (we have to wait). After cluster created we can check nodes using below command.
+## Note: Cluster creation will take 5 to 10 mins of time (we have to wait).
 
+## Update Kubeconfig to point the correct cluster
+
+`
+aws eks update-kubeconfig --region ap-south-1 --name demo-cluster-1
+`
+
+## After cluster created we can check nodes using below command and Kubeconfig is updated
 `
  kubectl get nodes  
 `
